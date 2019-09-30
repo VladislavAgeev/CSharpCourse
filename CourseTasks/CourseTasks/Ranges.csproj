@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E563D62-8B8A-4013-8AF4-15B811D35D7C}</ProjectGuid>
+    <ProjectGuid>{2BA3C894-97F9-40DE-919F-321A147BE34B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CourseTasks</RootNamespace>
     <AssemblyName>CourseTasks</AssemblyName>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="RangeMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Range.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
