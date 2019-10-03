@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseTasks
+namespace Range
 {
     class Range
     {
+        public double From { get; set; }
+
+        public double To { get; set; }
+
         public Range(double from, double to)
         {
             From = from;
             To = to;
         }
-
-        public double From { get; set; }
-
-        public double To { get; set; }
 
         public double GetLength()
         {

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseTasks
+namespace Range
 {
     class RangeMain
     {
         static void Main(string[] args)
         {
-            Range range = new Range(5, 18);
+            Range range = new Range(2, 10);
 
             Console.WriteLine("Длина диапазона = " + range.GetLength());
 
