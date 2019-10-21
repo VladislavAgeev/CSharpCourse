@@ -10,19 +10,40 @@ namespace Range
     {
         static void Main(string[] args)
         {
-            Range range = new Range(2, 10);
+            Range firstRange = new Range(2, 5);
 
-            Console.WriteLine("Длина диапазона = " + range.GetLength());
+            Range secondRange = new Range(6, 10);
 
-            double number = 7.5;
+            Range rangesIntersection = firstRange.GetRangesIntersection(secondRange);
 
-            if (range.IsInside(number))
+            if (rangesIntersection == null)
             {
-                Console.WriteLine("Число принадлежит диапазону");
+                Console.WriteLine("Интервал пересечения диапазонов не найден.");
             }
             else
             {
-                Console.WriteLine("Число не принадлежит диапазону");
+                Console.WriteLine("Интервал пересечения диапазонов = " + rangesIntersection.ToString());
+            }
+
+            Range[] rangesAssociation = firstRange.GetRangesAssociation(secondRange);
+
+            foreach (Range r in rangesAssociation)
+            {
+                Console.WriteLine("Интервал объединения диапазонов = " + r.ToString());
+            }
+
+            Range[] rangesDifference = firstRange.GetRangesDifference(secondRange);
+
+            if (rangesDifference == null)
+            {
+                Console.WriteLine("Разность интервалов не найдена.");
+            }
+            else
+            {
+                foreach (Range r in rangesDifference)
+                {
+                    Console.WriteLine("Разность интервалов = " + r.ToString());
+                }
             }
         }
     }
