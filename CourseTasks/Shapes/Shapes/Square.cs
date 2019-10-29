@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
-    class Circle : IShape
+    class Square : IShape
     {
-        private double radius { get; set; }
+        private double SideLength { get; }
 
-        public Circle(double radius)
+        public Square(double sideLength)
         {
-            this.radius = radius;
+            SideLength = sideLength;
         }
 
         public override bool Equals(object obj)
@@ -18,16 +16,14 @@ namespace Shapes
                 return true;
             }
 
-            if (ReferenceEquals(obj, null) || obj.GetType() != this.GetType())
+            if (ReferenceEquals(obj, null) || obj.GetType() != GetType())
             {
                 return false;
             }
-            else
-            {
-                Circle c = (Circle)obj;
 
-                return radius == c.radius;
-            }
+            Square s = (Square)obj;
+
+            return SideLength == s.SideLength;
         }
 
         public override int GetHashCode()
@@ -35,34 +31,34 @@ namespace Shapes
             int prime = 37;
             int hash = 1;
 
-            hash = prime * hash + radius.GetHashCode();
+            hash = prime * hash + SideLength.GetHashCode();
 
             return hash;
         }
 
         public override string ToString()
         {
-            return base.ToString() + ": " + "Радиус = " + radius.ToString();
+            return base.ToString() + ": Длина стороны = " + SideLength;
         }
 
         public double GetWidth()
         {
-            return radius * 2;
+            return SideLength;
         }
 
         public double GetHeight()
         {
-            return radius * 2;
+            return SideLength;
         }
 
         public double GetArea()
         {
-            return Math.PI * Math.Pow(radius, 2);
+            return SideLength * SideLength;
         }
 
         public double GetPerimeter()
         {
-            return radius * 2 * Math.PI;
+            return SideLength * 4;
         }
     }
 }

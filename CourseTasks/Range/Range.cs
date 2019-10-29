@@ -1,120 +1,119 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Range
+﻿namespace Range
 {
     class Range
     {
-        public double from { get; set; }
-
-        public double to { get; set; }
+        private double From { get; set; }
+        private double To { get; set; }
 
         public Range(double from, double to)
         {
-            this.from = from;
-            this.to = to;
+            From = from;
+            To = to;
         }
 
         public override string ToString()
         {
-            return string.Join(",", from, to);
+            return string.Join("; ", "{" + From, To + "}");
         }
 
         public double GetLength()
         {
-            return to - from;
+            return To - From;
         }
 
         public bool IsInside(double x)
         {
-            return x >= from && x <= to;
+            return x >= From && x <= To;
         }
 
-        public Range GetRangesIntersection(Range range)//пересечение
+        public Range GetIntersection(Range range)//пересечение
         {
-            if (from < range.from && range.from < to && to < range.to)
+            if (From <= range.From && range.From < To && To <= range.To)
             {
-                return new Range(range.from, to);
+                return new Range(range.From, To);
             }
-            else if (from > range.from && to > range.to && range.to > from)
+
+            if (From > range.From && To >= range.To && range.To > From)
             {
-                return new Range(from, range.to);
+                return new Range(From, range.To);
             }
-            else if (from < range.from && to > range.to)
+
+            if (From < range.From && To > range.To)
             {
-                return new Range(range.from, range.to);
+                return new Range(range.From, range.To);
             }
-            else if (from > range.from && to < range.to)
+
+            if (From > range.From && To < range.To)
             {
-                return new Range(from, to);
+                return new Range(From, To);
             }
 
             return null;
         }
 
-        public Range[] GetRangesAssociation(Range range)//объединение
+        public Range[] GetUnion(Range range)//объединение
         {
-            if (from < range.from && range.from < to && to < range.to)
+            if (From <= range.From && range.From < To && To <= range.To)
             {
-                Range[] range1 = { new Range(from, range.to) };
-
-                return range1;
-            }
-            else if (from > range.from && to > range.to && range.to > from)
-            {
-                Range[] range2 = { new Range(range.from, to) };
-
-                return range2;
-            }
-            else if (from < range.from && to > range.to)
-            {
-                Range[] range3 = { new Range(from, to) };
-
-                return range3;
-            }
-            else if (from > range.from && to < range.to)
-            {
-                Range[] range4 = { new Range(range.from, range.to) };
-
-                return range4;
+                return new Range[] { new Range(From, range.To) };
             }
 
-            Range[] ranges = { new Range(from, to), new Range(range.from, range.to) };
+            if (From > range.From && To >= range.To && range.To > From)
+            {
+                return new Range[] { new Range(range.From, To) };
+            }
 
-            return ranges;
+            if (From < range.From && To > range.To)
+            {
+                return new Range[] { new Range(From, To) };
+            }
+
+            if (From > range.From && To < range.To)
+            {
+                return new Range[] { new Range(range.From, range.To) };
+            }
+
+            if (From == range.To)
+            {
+                return new Range[] { new Range(range.From, To) };
+            }
+
+            if (To == range.From)
+            {
+                return new Range[] { new Range(From, range.To) };
+            }
+
+            return new Range[] { new Range(From, To), new Range(range.From, range.To) };
         }
 
-        public Range[] GetRangesDifference(Range range)//разность
+        public Range[] GetDifference(Range range)//разность
         {
-            if (from < range.from && range.from < to && to < range.to)
+            if (From < range.From && range.From < To && To <= range.To)
             {
-                Range[] range1 = { new Range(from, range.from) };
-
-                return range1;
-            }
-            else if (from > range.from && to > range.to && range.to > from)
-            {
-                Range[] range2 = { new Range(range.to, to) };
-
-                return range2;
-            }
-            else if (from < range.from && to > range.to)
-            {
-                Range[] range3 = { new Range(from, range.from), new Range(range.to, to) };
-
-                return range3;
-            }
-            else if (from > range.from && to < range.to)
-            {
-                return null;
+                return new Range[] { new Range(From, range.From) };
             }
 
-            Range[] range4 = { new Range(from, to) };
+            if (From > range.From && To >= range.To && range.To > From)
+            {
+                return new Range[] { new Range(range.To, To) };
+            }
 
-            return range4;
+            if (From < range.From && To > range.To)
+            {
+                return new Range[] { new Range(From, range.From), new Range(range.To, To) };
+            }
+
+            if (From > range.From && To < range.To)
+            {
+                return new Range[] { };
+            }
+
+            if (From == range.From && To == range.To)
+            {
+                return new Range[] { };
+            }
+
+            return new Range[] { new Range(From, To) };
         }
     }
 }

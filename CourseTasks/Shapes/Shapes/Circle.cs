@@ -1,12 +1,14 @@
-﻿namespace Shapes
-{
-    class Square : IShape
-    {
-        private double sideLength { get; set; }
+﻿using System;
 
-        public Square(double sideLength)
+namespace Shapes.Shapes
+{
+    class Circle : IShape
+    {
+        private double Radius { get; }
+
+        public Circle(double radius)
         {
-            this.sideLength = sideLength;
+            Radius = radius;
         }
 
         public override bool Equals(object obj)
@@ -16,16 +18,14 @@
                 return true;
             }
 
-            if (ReferenceEquals(obj, null) || obj.GetType() != this.GetType())
+            if (ReferenceEquals(obj, null) || obj.GetType() != GetType())
             {
                 return false;
             }
-            else
-            {
-                Square s = (Square)obj;
 
-                return sideLength == s.sideLength;
-            }
+            Circle c = (Circle)obj;
+
+            return Radius == c.Radius;
         }
 
         public override int GetHashCode()
@@ -33,34 +33,34 @@
             int prime = 37;
             int hash = 1;
 
-            hash = prime * hash + sideLength.GetHashCode();
+            hash = prime * hash + Radius.GetHashCode();
 
             return hash;
         }
 
         public override string ToString()
         {
-            return base.ToString() + ": " + "Длина стороны = " + sideLength.ToString();
+            return base.ToString() + ": Радиус = " + Radius;
         }
 
         public double GetWidth()
         {
-            return sideLength;
+            return Radius * 2;
         }
 
         public double GetHeight()
         {
-            return sideLength;
+            return Radius * 2;
         }
 
         public double GetArea()
         {
-            return sideLength * sideLength;
+            return Math.PI * Math.Pow(Radius, 2);
         }
 
         public double GetPerimeter()
         {
-            return sideLength * 4;
+            return Radius * 2 * Math.PI;
         }
     }
 }

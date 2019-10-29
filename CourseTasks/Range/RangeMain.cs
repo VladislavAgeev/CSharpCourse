@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Range
 {
@@ -10,41 +6,56 @@ namespace Range
     {
         static void Main(string[] args)
         {
-            Range firstRange = new Range(2, 5);
+            Range firstRange = new Range(3, 5);
 
-            Range secondRange = new Range(6, 10);
+            Range secondRange = new Range(5, 8);
 
-            Range rangesIntersection = firstRange.GetRangesIntersection(secondRange);
+            Range rangesIntersection = firstRange.GetIntersection(secondRange);
 
             if (rangesIntersection == null)
             {
-                Console.WriteLine("Интервал пересечения диапазонов не найден.");
+                Console.WriteLine("Пересечение диапазонов не найдено.");
             }
             else
             {
-                Console.WriteLine("Интервал пересечения диапазонов = " + rangesIntersection.ToString());
+                Console.WriteLine("Пересечение диапазонов = " + "[" + rangesIntersection + "]");
             }
 
-            Range[] rangesAssociation = firstRange.GetRangesAssociation(secondRange);
+            Range[] rangesUnion = firstRange.GetUnion(secondRange);
 
-            foreach (Range r in rangesAssociation)
-            {
-                Console.WriteLine("Интервал объединения диапазонов = " + r.ToString());
-            }
+            Console.Write("Объединение диапазонов = ");
+            Console.Write("[");
 
-            Range[] rangesDifference = firstRange.GetRangesDifference(secondRange);
-
-            if (rangesDifference == null)
+            for (int i = 0; i < rangesUnion.Length; i++)
             {
-                Console.WriteLine("Разность интервалов не найдена.");
-            }
-            else
-            {
-                foreach (Range r in rangesDifference)
+                if (i == 1)
                 {
-                    Console.WriteLine("Разность интервалов = " + r.ToString());
+                    Console.Write(", ");
                 }
+
+                Console.Write(rangesUnion[i]);
             }
+
+            Console.Write("]");
+            Console.WriteLine();
+
+            Range[] rangesDifference = firstRange.GetDifference(secondRange);
+
+            Console.Write("Разность интервалов = ");
+            Console.Write("[");
+
+            for (int i = 0; i < rangesDifference.Length; i++)
+            {
+                if (i == 1)
+                {
+                    Console.Write(", ");
+                }
+
+                Console.Write(rangesDifference[i]);
+            }
+
+            Console.Write("]");
+            Console.WriteLine();
         }
     }
 }
