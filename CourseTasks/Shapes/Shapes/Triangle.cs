@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace Shapes
+namespace Shapes.Shapes
 {
     class Triangle : IShape
     {
-        private double X1 { get; }
-        private double Y1 { get; }
-        private double X2 { get; }
-        private double Y2 { get; }
-        private double X3 { get; }
-        private double Y3 { get; }
+        public double X1 { get; }
+        public double Y1 { get; }
+        public double X2 { get; }
+        public double Y2 { get; }
+        public double X3 { get; }
+        public double Y3 { get; }
 
         public Triangle(double x1, double y1, double x2, double y2, double x3, double y3)
         {
@@ -58,22 +58,27 @@ namespace Shapes
             return base.ToString() + ": x1 = " + X1 + ", " + "y1 = " + Y1 + ", " + "x2 = " + X2 + ", " + "y2 = " + Y2 + ", " + "x3 = " + X3 + ", " + "y3 = " + Y3;
         }
 
-        public double GetSideLength(double a, double b, double c)
+        private static double GetSideLength(double a, double b, double c, double d)
         {
-            double maxValue = Math.Max(a, Math.Max(b, c));
-            double minValue = Math.Min(a, Math.Min(b, c));
+            double sideLength = Math.Sqrt(Math.Pow(b - a, 2) + Math.Pow(d - c, 2));
 
-            return maxValue - minValue;
+            return sideLength;
         }
 
         public double GetWidth()
         {
-            return GetSideLength(X1, X2, X3);
+            double maxValue = Math.Max(X1, Math.Max(X2, X3));
+            double minValue = Math.Min(X1, Math.Min(X2, X3));
+
+            return maxValue - minValue;
         }
 
         public double GetHeight()
         {
-            return GetSideLength(Y1, Y2, Y3);
+            double maxValue = Math.Max(Y1, Math.Max(Y2, Y3));
+            double minValue = Math.Min(Y1, Math.Min(Y2, Y3));
+
+            return maxValue - minValue; ;
         }
 
         public double GetArea()
@@ -85,9 +90,9 @@ namespace Shapes
                 return 0;
             }
 
-            double sideLength1 = Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2));
-            double sideLength2 = Math.Sqrt(Math.Pow(X3 - X1, 2) + Math.Pow(Y3 - Y1, 2));
-            double sideLength3 = Math.Sqrt(Math.Pow(X3 - X2, 2) + Math.Pow(Y3 - Y2, 2));
+            double sideLength1 = GetSideLength(X1, X2, Y1, Y2);
+            double sideLength2 = GetSideLength(X1, X3, Y1, Y3);
+            double sideLength3 = GetSideLength(X2, X3, Y2, Y3);
             double semiPerimeter = (sideLength1 + sideLength2 + sideLength3) / 2;
 
             double triangleArea = Math.Sqrt(semiPerimeter * (semiPerimeter - sideLength1) * (semiPerimeter - sideLength2) * (semiPerimeter - sideLength3));
@@ -97,9 +102,9 @@ namespace Shapes
 
         public double GetPerimeter()
         {
-            double sideLength1 = Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2));
-            double sideLength2 = Math.Sqrt(Math.Pow(X3 - X1, 2) + Math.Pow(Y3 - Y1, 2));
-            double sideLength3 = Math.Sqrt(Math.Pow(X3 - X2, 2) + Math.Pow(Y3 - Y2, 2));
+            double sideLength1 = GetSideLength(X1, X2, Y1, Y2);
+            double sideLength2 = GetSideLength(X1, X3, Y1, Y3);
+            double sideLength3 = GetSideLength(X2, X3, Y2, Y3);
 
             double trianglePerimeter = sideLength1 + sideLength2 + sideLength3;
 

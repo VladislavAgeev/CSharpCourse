@@ -1,8 +1,8 @@
-﻿namespace Shapes
+﻿namespace Shapes.Shapes
 {
     class Square : IShape
     {
-        private double SideLength { get; }
+        public double SideLength { get; }
 
         public Square(double sideLength)
         {

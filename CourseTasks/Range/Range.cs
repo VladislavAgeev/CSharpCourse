@@ -1,9 +1,9 @@
 ﻿namespace Range
 {
-    class Range
+    public class Range
     {
-        private double From { get; set; }
-        private double To { get; set; }
+        public double From { get; set; }
+        public double To { get; set; }
 
         public Range(double from, double to)
         {
@@ -13,7 +13,7 @@
 
         public override string ToString()
         {
-            return string.Join("; ", "{" + From, To + "}");
+            return "{" + From + "; " + To + "}";
         }
 
         public double GetLength()

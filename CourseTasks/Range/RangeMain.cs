@@ -6,11 +6,10 @@ namespace Range
     {
         static void Main(string[] args)
         {
-            Range firstRange = new Range(3, 5);
+            Range range1 = new Range(3, 5);
+            Range range2 = new Range(5, 8);
 
-            Range secondRange = new Range(5, 8);
-
-            Range rangesIntersection = firstRange.GetIntersection(secondRange);
+            Range rangesIntersection = range1.GetIntersection(range2);
 
             if (rangesIntersection == null)
             {
@@ -18,13 +17,12 @@ namespace Range
             }
             else
             {
-                Console.WriteLine("Пересечение диапазонов = " + "[" + rangesIntersection + "]");
+                Console.WriteLine("Пересечение диапазонов = [" + rangesIntersection + "]");
             }
 
-            Range[] rangesUnion = firstRange.GetUnion(secondRange);
+            Range[] rangesUnion = range1.GetUnion(range2);
 
-            Console.Write("Объединение диапазонов = ");
-            Console.Write("[");
+            Console.Write("Объединение диапазонов = [");
 
             for (int i = 0; i < rangesUnion.Length; i++)
             {
@@ -36,13 +34,11 @@ namespace Range
                 Console.Write(rangesUnion[i]);
             }
 
-            Console.Write("]");
-            Console.WriteLine();
+            Console.WriteLine("]");
 
-            Range[] rangesDifference = firstRange.GetDifference(secondRange);
+            Range[] rangesDifference = range1.GetDifference(range2);
 
-            Console.Write("Разность интервалов = ");
-            Console.Write("[");
+            Console.Write("Разность интервалов = [");
 
             for (int i = 0; i < rangesDifference.Length; i++)
             {
@@ -54,8 +50,7 @@ namespace Range
                 Console.Write(rangesDifference[i]);
             }
 
-            Console.Write("]");
-            Console.WriteLine();
+            Console.WriteLine("]");
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Shapes
+namespace Shapes.Shapes
 {
     class Rectangle : IShape
     {
-        private double FirstSideLength { get; }
-        private double SecondSideLength { get; }
+        public double FirstSideLength { get; }
+        public double SecondSideLength { get; }
 
         public Rectangle(double firstSideLength, double secondSideLength)
         {
@@ -63,7 +63,7 @@ namespace Shapes
 
         public double GetPerimeter()
         {
-            return FirstSideLength + SecondSideLength;
+            return (FirstSideLength + SecondSideLength) * 2;
         }
     }
 }
