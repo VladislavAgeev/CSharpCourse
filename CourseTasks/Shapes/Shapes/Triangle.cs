@@ -58,27 +58,29 @@ namespace Shapes.Shapes
             return base.ToString() + ": x1 = " + X1 + ", " + "y1 = " + Y1 + ", " + "x2 = " + X2 + ", " + "y2 = " + Y2 + ", " + "x3 = " + X3 + ", " + "y3 = " + Y3;
         }
 
-        private static double GetSideLength(double a, double b, double c, double d)
+        private static double GetWidthAndHeight(double coordinate1, double coordinate2, double coordinate3)
         {
-            double sideLength = Math.Sqrt(Math.Pow(b - a, 2) + Math.Pow(d - c, 2));
+            double maxValue = Math.Max(coordinate1, Math.Max(coordinate2, coordinate3));
+            double minValue = Math.Min(coordinate1, Math.Min(coordinate2, coordinate3));
+
+            return maxValue - minValue;
+        }
+
+        private static double GetSideLength(double firstCoordinateX, double firstCoordinateY, double secondCoordinateX, double secondCoordinateY)
+        {
+            double sideLength = Math.Sqrt(Math.Pow(secondCoordinateX - firstCoordinateX, 2) + Math.Pow(secondCoordinateY - firstCoordinateY, 2));
 
             return sideLength;
         }
 
         public double GetWidth()
         {
-            double maxValue = Math.Max(X1, Math.Max(X2, X3));
-            double minValue = Math.Min(X1, Math.Min(X2, X3));
-
-            return maxValue - minValue;
+            return GetWidthAndHeight(X1, X2, X3);
         }
 
         public double GetHeight()
         {
-            double maxValue = Math.Max(Y1, Math.Max(Y2, Y3));
-            double minValue = Math.Min(Y1, Math.Min(Y2, Y3));
-
-            return maxValue - minValue; ;
+            return GetWidthAndHeight(Y1, Y2, Y3);
         }
 
         public double GetArea()
@@ -90,25 +92,21 @@ namespace Shapes.Shapes
                 return 0;
             }
 
-            double sideLength1 = GetSideLength(X1, X2, Y1, Y2);
-            double sideLength2 = GetSideLength(X1, X3, Y1, Y3);
-            double sideLength3 = GetSideLength(X2, X3, Y2, Y3);
+            double sideLength1 = GetSideLength(X1, Y1, X2, Y2);
+            double sideLength2 = GetSideLength(X1, Y1, X3, Y3);
+            double sideLength3 = GetSideLength(X2, Y2, X3, Y3);
             double semiPerimeter = (sideLength1 + sideLength2 + sideLength3) / 2;
 
-            double triangleArea = Math.Sqrt(semiPerimeter * (semiPerimeter - sideLength1) * (semiPerimeter - sideLength2) * (semiPerimeter - sideLength3));
-
-            return triangleArea;
+            return Math.Sqrt(semiPerimeter * (semiPerimeter - sideLength1) * (semiPerimeter - sideLength2) * (semiPerimeter - sideLength3)); ;
         }
 
         public double GetPerimeter()
         {
-            double sideLength1 = GetSideLength(X1, X2, Y1, Y2);
-            double sideLength2 = GetSideLength(X1, X3, Y1, Y3);
-            double sideLength3 = GetSideLength(X2, X3, Y2, Y3);
+            double sideLength1 = GetSideLength(X1, Y1, X2, Y2);
+            double sideLength2 = GetSideLength(X1, Y1, X3, Y3);
+            double sideLength3 = GetSideLength(X2, Y2, X3, Y3);
 
-            double trianglePerimeter = sideLength1 + sideLength2 + sideLength3;
-
-            return trianglePerimeter;
+            return sideLength1 + sideLength2 + sideLength3;
         }
     }
 }
