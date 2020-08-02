@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayListHome", "ArrayListH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector", "Vector\Vector.csproj", "{6946F382-F30C-445C-ABFD-0BB79BF5A687}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{EF8D8A03-EBA6-4AAA-BA04-75D971206714}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Courses", "Courses", "{70577C41-C79E-41D2-AD0C-C966E0DAFAD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{6946F382-F30C-445C-ABFD-0BB79BF5A687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6946F382-F30C-445C-ABFD-0BB79BF5A687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6946F382-F30C-445C-ABFD-0BB79BF5A687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
