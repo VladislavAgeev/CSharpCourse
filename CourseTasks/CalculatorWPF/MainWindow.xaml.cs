@@ -1,27 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace Calculator
+
+namespace CalculatorWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        float number1, number2;
-        float result;
+        double number1, number2, result;
 
         string operation = "";
 
@@ -34,13 +22,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 1);
+                number1 = Convert.ToDouble(textDisplay.Text) + 1;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 1);
-                textDisplay.Text = number2.ToString();
+                number2 = 1;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -48,13 +36,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 2);
+                number1 = Convert.ToDouble(textDisplay.Text) + 2;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 2);
-                textDisplay.Text = number2.ToString();
+                number2 = 2;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -62,13 +50,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 3);
+                number1 = Convert.ToDouble(textDisplay.Text) + 3;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 3);
-                textDisplay.Text = number2.ToString();
+                number2 = 3;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -76,13 +64,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 4);
+                number1 = Convert.ToDouble(textDisplay.Text) + 4;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 4);
-                textDisplay.Text = number2.ToString();
+                number2 = 4;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -90,13 +78,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 5);
+                number1 = Convert.ToDouble(textDisplay.Text) + 5;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 5);
-                textDisplay.Text = number2.ToString();
+                number2 = 5;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -104,13 +92,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 6);
+                number1 = Convert.ToDouble(textDisplay.Text) + 6;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 6);
-                textDisplay.Text = number2.ToString();
+                number2 = 6;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -118,13 +106,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 7);
+                number1 = Convert.ToDouble(textDisplay.Text) + 7;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 7);
-                textDisplay.Text = number2.ToString();
+                number2 = 7;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -132,13 +120,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 8);
+                number1 = Convert.ToDouble(textDisplay.Text) + 8;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 8);
-                textDisplay.Text = number2.ToString();
+                number2 = 8;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -146,13 +134,13 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 9);
+                number1 = Convert.ToDouble(textDisplay.Text) + 9;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 9);
-                textDisplay.Text = number2.ToString();
+                number2 = 9;
+                textDisplay.Text += number2.ToString();
             }
         }
 
@@ -160,41 +148,37 @@ namespace Calculator
         {
             if (operation == "")
             {
-                number1 = float.Parse(textDisplay.Text + 0);
+                number1 = Convert.ToDouble(textDisplay.Text) + 0;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = float.Parse(textDisplay.Text + 0);
-                textDisplay.Text = number2.ToString();
+                number2 = 0;
+                textDisplay.Text += number2.ToString();
             }
         }
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
             operation = "+";
-            number1 = float.Parse(textDisplay.Text);
             textDisplay.Text = number1.ToString() + "+";
         }
 
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
             operation = "-";
-            number1 = float.Parse(textDisplay.Text);
             textDisplay.Text = number1.ToString() + "-";
         }
 
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
         {
             operation = "*";
-            number1 = float.Parse(textDisplay.Text);
             textDisplay.Text = number1.ToString() + "*";
         }
 
         private void BtnDivide_Click(object sender, RoutedEventArgs e)
         {
             operation = "/";
-            number1 = float.Parse(textDisplay.Text);
             textDisplay.Text = number1.ToString() + "/";
         }
 
@@ -230,22 +214,36 @@ namespace Calculator
 
         private void BtnClearEntry_Click(object sender, RoutedEventArgs e)
         {
+            if (operation == "")
+            {
+                number1 = 0;
+                textDisplay.Text = "0";
+            }
+            else
+            {
+                number2 = 0;
+                textDisplay.Text = number1 + operation;
+            }
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
             number1 = 0;
             number2 = 0;
             operation = "";
-            textDisplay.Text = "";
+            textDisplay.Text = "0";
         }
 
         private void BtnBackspace_Click(object sender, RoutedEventArgs e)
         {
             if (operation == "")
             {
-                number1 = (number1 / 10);
+                number1 /= 10;
                 textDisplay.Text = number1.ToString();
             }
             else
             {
-                number2 = (number2 / 10);
+                number2 /= 10;
                 textDisplay.Text = number2.ToString();
             }
         }
@@ -261,18 +259,6 @@ namespace Calculator
             {
                 number2 *= -1;
                 textDisplay.Text = number2.ToString();
-            }
-        }
-
-        private void BtnFractional_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                textDisplay.Text = number1.ToString() + ",";
-            }
-            else
-            {
-                textDisplay.Text = number2.ToString() + ",";
             }
         }
     }
