@@ -40,12 +40,11 @@
         <Button x:Name="btnMinus" Grid.Row="2" Grid.Column="3" Click="BtnMinus_Click">-</Button>
         <Button x:Name="btnTimes" Grid.Row="3" Grid.Column="3" Click="BtnTimes_Click">*</Button>
         <Button x:Name="btnDivide" Grid.Row="4" Grid.Column="3" Click="BtnDivide_Click">/</Button>
-        <Button x:Name="btnEquals" Grid.Row="5" Grid.Column="3" Click="BtnEquals_Click">=</Button>
+        <Button x:Name="btnEquals" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Click="BtnEquals_Click">=</Button>
 
         <!--Clear button-->
         <Button x:Name="btnClearEntry" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Click="BtnClearEntry_Click">CE</Button>
-        <Button x:Name="btnClear" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Click="BtnClear_Click">C</Button>
-        <Button x:Name="btnBackspace" Grid.Row="1" Grid.Column="2" Content="&lt;=" Click="BtnBackspace_Click"></Button>
+        <Button x:Name="btnClear" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Click="BtnClear_Click">C</Button>
 
         <!--Positive and negative button-->
         <Button x:Name="btnPositiveNegative" Grid.Row="5" Grid.Column="0" Click="BtnPositiveNegative_Click">+-</Button>

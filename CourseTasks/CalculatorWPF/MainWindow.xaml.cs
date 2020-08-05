@@ -234,20 +234,6 @@ namespace CalculatorWPF
             textDisplay.Text = "0";
         }
 
-        private void BtnBackspace_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 /= 10;
-                textDisplay.Text = number1.ToString();
-            }
-            else
-            {
-                number2 /= 10;
-                textDisplay.Text = number2.ToString();
-            }
-        }
-
         private void BtnPositiveNegative_Click(object sender, RoutedEventArgs e)
         {
             if (operation == "")
