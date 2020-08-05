@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayListHome", "ArrayListH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector", "Vector\Vector.csproj", "{6946F382-F30C-445C-ABFD-0BB79BF5A687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorWPF", "Calculator\CalculatorWPF.csproj", "{EF8D8A03-EBA6-4AAA-BA04-75D971206714}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Courses", "Courses", "{70577C41-C79E-41D2-AD0C-C966E0DAFAD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. MaxSubstring", "11. MaxSubstring\11. MaxSubstring.csproj", "{1F02A62F-D402-4185-AA7A-DFA15D88DAD3}"
@@ -51,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. GuessNumber", "09. Gues
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Contribution", "10. Contribution\10. Contribution.csproj", "{B885471E-EAD3-4628-BB16-2DFCB963D1AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorWPF", "CalculatorWPF\CalculatorWPF.csproj", "{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,10 +73,6 @@ Global
 		{6946F382-F30C-445C-ABFD-0BB79BF5A687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6946F382-F30C-445C-ABFD-0BB79BF5A687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6946F382-F30C-445C-ABFD-0BB79BF5A687}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF8D8A03-EBA6-4AAA-BA04-75D971206714}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F02A62F-D402-4185-AA7A-DFA15D88DAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F02A62F-D402-4185-AA7A-DFA15D88DAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F02A62F-D402-4185-AA7A-DFA15D88DAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -149,6 +145,10 @@ Global
 		{B885471E-EAD3-4628-BB16-2DFCB963D1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B885471E-EAD3-4628-BB16-2DFCB963D1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B885471E-EAD3-4628-BB16-2DFCB963D1AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
