@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Contribution", "10. Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorWPF", "CalculatorWPF\CalculatorWPF.csproj", "{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoAppWPF", "..\..\05. WPF\TodoApp2\TodoApp2\ToDoAppWPF.csproj", "{938A463B-9402-42EC-8E39-C68E6E41AB77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,10 @@ Global
 		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA2C16B1-EEB4-4C84-B3E2-7528433DC377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938A463B-9402-42EC-8E39-C68E6E41AB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938A463B-9402-42EC-8E39-C68E6E41AB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938A463B-9402-42EC-8E39-C68E6E41AB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938A463B-9402-42EC-8E39-C68E6E41AB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
